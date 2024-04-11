@@ -77,7 +77,6 @@ jobs:
         run: composer pest
 
   phpstan:
-    if: false
     needs: [validate-composer]
     name: ⚗️ PHPStan - PHP ${{ matrix.php }}
 
