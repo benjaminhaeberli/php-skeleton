@@ -1,4 +1,4 @@
-# name: Release drafter 🔖
+name: release-drafter
 
 on:
   workflow_run:
