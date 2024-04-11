@@ -1,10 +1,18 @@
 <p align="center">
     <img src="./.github/banner.png" width="548" alt="Skeleton Php">
     <p align="center">
-        <a href="https://github.com/benjaminhaeberli/php-skeleton/actions"><img alt="GitHub Workflow Status (main)" src="https://github.com/benjaminhaeberli/php-skeleton/actions/workflows/tests.yml/badge.svg"></a>
-        <a href="https://packagist.org/packages/benjaminhaeberli/php-skeleton"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/benjaminhaeberli/php-skeleton"></a>
-        <a href="https://packagist.org/packages/benjaminhaeberli/php-skeleton"><img alt="Latest Version" src="https://img.shields.io/packagist/v/benjaminhaeberli/php-skeleton"></a>
-        <a href="https://packagist.org/packages/benjaminhaeberli/php-skeleton"><img alt="License" src="https://img.shields.io/packagist/l/benjaminhaeberli/php-skeleton"></a>
+        <a href="https://github.com/benjaminhaeberli/php-skeleton/actions">
+            <img alt="GitHub Workflow Status (main)" src="https://github.com/benjaminhaeberli/php-skeleton/actions/workflows/tests.yml/badge.svg">
+        </a>
+        <a href="https://github.com/benjaminhaeberli/php-skeleton/releases/latest">
+            <img alt="GitHub Release" src="https://img.shields.io/github/v/release/benjaminhaeberli/php-skeleton">
+        </a>
+        <a href="https://github.com/benjaminhaeberli/php-skeleton/releases/latest">
+            <img alt="GitHub Release Date" src="https://img.shields.io/github/release-date/benjaminhaeberli/php-skeleton">
+        </a>
+        <a href="https://packagist.org/packages/benjaminhaeberli/php-skeleton/">
+            <img alt="GitHub License" src="https://img.shields.io/github/license/benjaminhaeberli/php-skeleton">
+        </a>
     </p>
 </p>
 
@@ -18,13 +26,15 @@
 
 ### Installation
 
-Create your package using [Composer](https://getcomposer.org)
+You can [create a new repository on GitHub](https://github.com/new?template_name=php-skeleton&template_owner=benjaminhaeberli) or [download the ZIP](https://github.com/benjaminhaeberli/php-skeleton/archive/refs/heads/main.zip) of the latest release.
+
+You can also install it using [composer](https://getcomposer.org) :
 
 ```bash
-composer create-project benjaminhaeberli/php-skeleton --prefer-source PackageName
+composer create-project benjaminhaeberli/php-skeleton --prefer-source YourApp
 ```
 
-Install [Composer](https://getcomposer.org) packages
+Then, install [composer](https://getcomposer.org) packages :
 
 ```bash
 composer install
@@ -63,7 +73,7 @@ composer test
 🧰 Validate `composer.json` and update dependencies
 
 ```bash
-composer make:composer
+composer core:update
 ```
 
 📈 Expose [code coverage](https://pestphp.com/docs/test-coverage) using [**PEST**](https://pestphp.com/docs/test-coverage) (_require XDEBUG in `coverage` mode_)

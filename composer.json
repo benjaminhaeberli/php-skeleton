@@ -68,7 +68,7 @@
             "@phpstan",
             "@pest"
         ],
-        "make:update": [
+        "core:update": [
             "composer validate --strict --ansi",
             "composer update --no-interaction --prefer-stable",
             "composer bump --ansi",
