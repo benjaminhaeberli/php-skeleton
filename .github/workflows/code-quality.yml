@@ -1,0 +1,110 @@
+name: Code quality 💎
+
+on:
+  pull_request: ~
+  push:
+    branches: [main, develop]
+
+jobs:
+  validate-composer:
+    name: 🧰 Validate composer.json
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.3
+          coverage: none
+
+      - name: Validate Composer
+        run: composer validate
+
+  laravel-pint:
+    if: github.actor != 'github-actions[bot]'
+    needs: [validate-composer]
+    name: 🎨 Fix styling
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Laravel Pint
+        uses: aglipanci/laravel-pint-action@latest
+
+      - name: Commit Changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 🎨 pint
+          commit_author: GitHub Actions <actions@github.com>
+
+  pest:
+    needs: [validate-composer]
+    name: 🚨 PEST - PHP ${{ matrix.php }} (${{ matrix.dependencies }} dependencies)
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: true
+      matrix:
+        os: [ubuntu-latest]
+        php: [8.3]
+        dependencies: ["lowest", "highest"]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, mbstring, zip
+          coverage: none
+
+      - name: Install dependencies
+        uses: "ramsey/composer-install@v3"
+        with:
+          dependency-versions: ${{ matrix.dependencies }}
+          composer-options: "--no-interaction --prefer-dist"
+
+      - name: Run PEST
+        run: composer pest
+
+  phpstan:
+    if: false
+    needs: [validate-composer]
+    name: ⚗️ PHPStan - PHP ${{ matrix.php }}
+
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: true
+      matrix:
+        os: [ubuntu-latest]
+        php: [8.3]
+        dependencies: ["lowest", "highest"]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, mbstring, zip
+          coverage: none
+
+      - name: Install dependencies
+        uses: "ramsey/composer-install@v3"
+        with:
+          dependency-versions: ${{ matrix.dependencies }}
+          composer-options: "--no-interaction --prefer-dist"
+
+      - name: Run PHPStan
+        run: composer phpstan

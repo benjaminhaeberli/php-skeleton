@@ -1,0 +1,51 @@
+name-template: "v$RESOLVED_VERSION"
+tag-template: "v$RESOLVED_VERSION"
+change-template: "- $TITLE ([#$NUMBER](https://github.com/benjaminhaeberli/php-skeleton/pull/$NUMBER)) [@$AUTHOR](https://github.com/@$AUTHOR)"
+no-changes-template: "* No changes (or commits without PRs)"
+commitish: main
+template: |
+  $CHANGES
+categories:
+  - title: "📦 Major"
+    labels:
+      - "release:major"
+  - title: "✨ Added"
+    labels:
+      - "release:added"
+  - title: "🛠 Changed "
+    labels:
+      - "release:changed"
+  - title: "🐛 Fixed"
+    labels:
+      - "release:fixed"
+  - title: "🏗 Maintenance "
+    labels:
+      - "release:core"
+  - title: "🚦 Deprecated"
+    labels:
+      - "release:deprecated"
+  - title: "🚨 Breaking Changes"
+    labels:
+      - "release:breaking"
+  - title: "🤖 Dependencies"
+    labels:
+      - dependencies
+
+version-resolver:
+  major:
+    labels:
+      - "release:breaking"
+      - "release:major"
+  minor:
+    labels:
+      - "release:added"
+      - "release:changed"
+      - "release:deprecated"
+      - "release:core"
+  patch:
+    labels:
+      - "release:fixed"
+      - "dependencies"
+  default: patch
+exclude-labels:
+  - "release:skip"

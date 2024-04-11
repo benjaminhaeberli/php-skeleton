@@ -24,6 +24,7 @@
         "pestphp/pest-plugin-type-coverage": "^2.8.1",
         "phpstan/phpstan": "^1.10.66",
         "rector/rector": "^1.0.4",
+        "spatie/ray": "^1.41.1",
         "symfony/var-dumper": "^6.4.0|^7.0.6"
     },
     "autoload": {
@@ -53,10 +54,12 @@
         "phpinsights": "./vendor/bin/phpinsights --ansi",
         "rector": "./vendor/bin/rector --ansi",
         "pint": "./vendor/bin/pint --ansi",
-        "test:rector": "rector --dry-run",
+        "test:rector": "./vendor/bin/rector --dry-run",
         "test:pint": "./vendor/bin/pint --test",
-        "phpstan": "phpstan analyse --ansi",
-        "pest": "pest --colors=always",
+        "phpstan": "./vendor/bin/phpstan analyse --ansi",
+        "pest": "./vendor/bin/pest --colors=always",
+        "pest:parallel": "./vendor/bin/pest --colors=always --parallel",
+        "pest:profiling": "./vendor/bin/pest --colors=always --profile",
         "pest:coverage": "./vendor/bin/pest --colors=always --coverage",
         "pest:type-coverage": "./vendor/bin/pest --colors=always --type-coverage",
         "test": [
@@ -67,7 +70,7 @@
         ],
         "make:update": [
             "composer validate --strict --ansi",
-            "composer update --no-interaction --prefer-dist",
+            "composer update --no-interaction --prefer-stable",
             "composer bump --ansi",
             "composer audit --ansi"
         ]

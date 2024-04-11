@@ -1,0 +1,32 @@
+name: Changelog 📄
+
+on:
+  release:
+    types: [released]
+
+jobs:
+  update-changelog:
+    name: 📝 Update changelog
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Update Changelog
+        uses: stefanzweifel/changelog-updater-action@v1
+        with:
+          latest-version: ${{ github.event.release.name }}
+          release-notes: ${{ github.event.release.body }}
+
+      - name: Commit updated CHANGELOG
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          branch: main
+          commit_message: 📝 changelog
+          file_pattern: CHANGELOG.md
+          commit_author: GitHub Actions <actions@github.com>

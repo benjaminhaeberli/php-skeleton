@@ -1,0 +1,27 @@
+name: Release drafter 🔖
+
+on:
+  workflow_run:
+    workflows: ["Code quality 💎"]
+    branches: [main]
+    types:
+      - completed
+
+jobs:
+  update_pre_release:
+    name: 🔖 Update the pre-release
+    runs-on: ubuntu-latest
+
+    permissions:
+      # Give the default GITHUB_TOKEN write permission.
+      # https://github.blog/changelog/2023-02-02-github-actions-updating-the-default-github_token-permissions-to-read-only/
+      contents: write
+      pull-requests: write
+      checks: write
+
+    steps:
+      - uses: release-drafter/release-drafter@v6
+        with:
+          disable-autolabeler: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
