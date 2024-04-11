@@ -78,7 +78,6 @@ composer pest:coverage
 
 ```bash
 composer phpinsights
-composer phpinsights -- --fix # to fix directly
 ```
 
 ✅ Run refactors using [**Rector**](https://getrector.com/documentation)
