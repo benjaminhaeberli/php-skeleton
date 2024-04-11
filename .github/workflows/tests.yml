@@ -1,4 +1,4 @@
-name: Code quality 💎
+# name: tests
 
 on:
   pull_request: ~

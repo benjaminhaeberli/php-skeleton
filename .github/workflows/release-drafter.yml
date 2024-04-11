@@ -1,8 +1,8 @@
-name: Release drafter 🔖
+# name: Release drafter 🔖
 
 on:
   workflow_run:
-    workflows: ["Code quality 💎"]
+    workflows: ["tests"]
     branches: [main]
     types:
       - completed

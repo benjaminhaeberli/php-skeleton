@@ -1,7 +1,7 @@
 <p align="center">
     <img src="./.github/banner.png" width="548" alt="Skeleton Php">
     <p align="center">
-        <a href="https://github.com/benjaminhaeberli/php-skeleton/actions"><img alt="GitHub Workflow Status (master)" src="https://github.com/benjaminhaeberli/php-skeleton/actions/workflows/tests.yml/badge.svg"></a>
+        <a href="https://github.com/benjaminhaeberli/php-skeleton/actions"><img alt="GitHub Workflow Status (main)" src="https://github.com/benjaminhaeberli/php-skeleton/actions/workflows/tests.yml/badge.svg"></a>
         <a href="https://packagist.org/packages/benjaminhaeberli/php-skeleton"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/benjaminhaeberli/php-skeleton"></a>
         <a href="https://packagist.org/packages/benjaminhaeberli/php-skeleton"><img alt="Latest Version" src="https://img.shields.io/packagist/v/benjaminhaeberli/php-skeleton"></a>
         <a href="https://packagist.org/packages/benjaminhaeberli/php-skeleton"><img alt="License" src="https://img.shields.io/packagist/l/benjaminhaeberli/php-skeleton"></a>
