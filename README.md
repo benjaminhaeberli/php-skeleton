@@ -4,6 +4,9 @@
         <a href="https://github.com/benjaminhaeberli/php-skeleton/actions">
             <img alt="GitHub Workflow Status (main)" src="https://github.com/benjaminhaeberli/php-skeleton/actions/workflows/tests.yml/badge.svg">
         </a>
+        <a href="https://packagist.org/packages/benjaminhaeberli/php-skeleton">
+        <img alt="Total Downloads" src="https://img.shields.io/packagist/dt/benjaminhaeberli/php-skeleton">
+        </a>
         <a href="https://github.com/benjaminhaeberli/php-skeleton/releases/latest">
             <img alt="GitHub Release" src="https://img.shields.io/github/v/release/benjaminhaeberli/php-skeleton">
         </a>
