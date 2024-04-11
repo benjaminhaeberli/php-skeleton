@@ -3,7 +3,7 @@ name: Release drafter 🔖
 on:
   workflow_run:
     workflows: ["Code quality 💎"]
-    branches: [main]
+    branches: [develop]
     types:
       - completed
 
