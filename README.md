@@ -13,7 +13,7 @@
         <a href="https://github.com/benjaminhaeberli/php-skeleton/releases/latest">
             <img alt="GitHub Release Date" src="https://img.shields.io/github/release-date/benjaminhaeberli/php-skeleton">
         </a>
-        <a href="https://packagist.org/packages/benjaminhaeberli/php-skeleton/">
+        <a href="https://github.com/benjaminhaeberli/php-skeleton/blob/main/LICENSE.md">
             <img alt="GitHub License" src="https://img.shields.io/github/license/benjaminhaeberli/php-skeleton">
         </a>
     </p>
