@@ -1,47 +1,90 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/nunomaduro/skeleton-php/master/docs/example.png" height="300" alt="Skeleton Php">
+    <img src="./.github/banner.png" width="548" alt="Skeleton Php">
     <p align="center">
-        <a href="https://github.com/nunomaduro/skeleton-php/actions"><img alt="GitHub Workflow Status (master)" src="https://github.com/nunomaduro/skeleton-php/actions/workflows/tests.yml/badge.svg"></a>
-        <a href="https://packagist.org/packages/nunomaduro/skeleton-php"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/nunomaduro/skeleton-php"></a>
-        <a href="https://packagist.org/packages/nunomaduro/skeleton-php"><img alt="Latest Version" src="https://img.shields.io/packagist/v/nunomaduro/skeleton-php"></a>
-        <a href="https://packagist.org/packages/nunomaduro/skeleton-php"><img alt="License" src="https://img.shields.io/packagist/l/nunomaduro/skeleton-php"></a>
+        <a href="https://github.com/benjaminhaeberli/php-skeleton/actions"><img alt="GitHub Workflow Status (master)" src="https://github.com/benjaminhaeberli/php-skeleton/actions/workflows/tests.yml/badge.svg"></a>
+        <a href="https://packagist.org/packages/benjaminhaeberli/php-skeleton"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/benjaminhaeberli/php-skeleton"></a>
+        <a href="https://packagist.org/packages/benjaminhaeberli/php-skeleton"><img alt="Latest Version" src="https://img.shields.io/packagist/v/benjaminhaeberli/php-skeleton"></a>
+        <a href="https://packagist.org/packages/benjaminhaeberli/php-skeleton"><img alt="License" src="https://img.shields.io/packagist/l/benjaminhaeberli/php-skeleton"></a>
     </p>
 </p>
 
-------
-This package provides a wonderful **PHP Skeleton** to start building your next package idea.
+---
 
-> **Requires [PHP 8.2+](https://php.net/releases/)**
+## Getting started 🔎
 
-⚡️ Create your package using [Composer](https://getcomposer.org):
+### Requirements
+
+-   **PHP [8.3+](https://php.net/releases/)**
+
+### Installation
+
+Create your package using [Composer](https://getcomposer.org)
 
 ```bash
-composer create-project nunomaduro/skeleton-php --prefer-source PackageName
+composer create-project benjaminhaeberli/php-skeleton --prefer-source PackageName
 ```
 
-🧹 Keep a modern codebase with **Pint**:
+Install [Composer](https://getcomposer.org) packages
+
 ```bash
-composer lint
+composer install
 ```
 
-✅ Run refactors using **Rector**
+## Commands ⌨️
+
+> More details in [composer.json](./composer.json)
+
+### Common
+
+🧹 Keep a modern codebase with [**Pint**](https://laravel.com/docs/11.x/pint) ([see default config](https://github.com/laravel/pint/blob/main/resources/presets/laravel.php))
+
 ```bash
-composer refacto
+composer pint
 ```
 
-⚗️ Run static analysis using **PHPStan**:
+⚗️ Run static analysis using [**PHPStan**](https://phpstan.org/user-guide/command-line-usage)
+
 ```bash
-composer test:types
+composer phpstan
 ```
 
-✅ Run unit tests using **PEST**
+✅ Run unit tests using [**PEST**](https://pestphp.com/docs/writing-tests)
+
 ```bash
-composer test:unit
+composer pest
 ```
 
-🚀 Run the entire test suite:
+🚀 Run the entire test suite
+
 ```bash
 composer test
 ```
 
-**Skeleton PHP** was created by **[Nuno Maduro](https://twitter.com/enunomaduro)** under the **[MIT license](https://opensource.org/licenses/MIT)**.
+🧰 Validate `composer.json` and update dependencies
+
+```bash
+composer make:composer
+```
+
+📈 Expose [code coverage](https://pestphp.com/docs/test-coverage) using [**PEST**](https://pestphp.com/docs/test-coverage) (_require XDEBUG in `coverage` mode_)
+
+```bash
+composer pest:coverage
+```
+
+### Code quality & refactoring
+
+💎 Measure the code quality with [**PHPInsights**](https://phpinsights.com/) _(see config\insights.php)_
+
+```bash
+composer phpinsights
+composer phpinsights -- --fix # to fix directly
+```
+
+✅ Run refactors using [**Rector**](https://getrector.com/documentation)
+
+```bash
+composer rector
+```
+
+**PHP skeleton** is maintained by **[Benjamin Haeberli](https://twitter.com/1benjam1)** under the **[MIT license](https://opensource.org/licenses/MIT)**.

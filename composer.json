@@ -21,9 +21,9 @@
         "laravel/pint": "^1.15.1",
         "nunomaduro/phpinsights": "^2.11",
         "pestphp/pest": "^2.34.7",
-        "pestphp/pest-plugin-type-coverage": "^2.8",
+        "pestphp/pest-plugin-type-coverage": "^2.8.1",
         "phpstan/phpstan": "^1.10.66",
-        "rector/rector": "^1.0.0",
+        "rector/rector": "^1.0.4",
         "symfony/var-dumper": "^6.4.0|^7.0.6"
     },
     "autoload": {
@@ -64,6 +64,12 @@
             "@fake:pint",
             "@phpstan",
             "@pest"
+        ],
+        "make:update": [
+            "composer validate --strict --ansi",
+            "composer update --no-interaction --prefer-dist",
+            "composer bump --ansi",
+            "composer audit --ansi"
         ]
     }
 }
